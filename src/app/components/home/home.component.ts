@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   loading: boolean;
   constructor(private spotifySrv: SpotifyService) {
     this.loading = true;
-    this.spotifySrv.getNewReleases().subscribe((res:any) => {
+    this.spotifySrv.getNewReleases().subscribe((res: any) => {
       console.log(res);
       this.songsList = res;
       this.loading = false;

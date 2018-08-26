@@ -6,21 +6,21 @@ import { SpotifyService } from '../../services/spotify.service';
   templateUrl: './search.component.html',
   styles: []
 })
-export class SearchComponent{
+export class SearchComponent {
 
   constructor(private spotifySrv: SpotifyService) { }
 
   artistList: any[];
   loading: boolean;
 
-  searchArtist(artist){
+  searchArtist(artist) {
     this.loading = true;
     this.spotifySrv.searchArtists(artist)
-    .subscribe((res:any) => {
+    .subscribe((res: any) => {
       console.log(res);
       this.artistList = res;
       this.loading = false;
-      
+
     });
   }
 }

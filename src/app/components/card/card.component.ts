@@ -12,12 +12,12 @@ export class CardComponent {
   constructor( private router: Router) { }
 
   findArtist( item: any ) {
-    let artistId:any;
-    console.log("item",item);
-    
-    if (item.type == 'artist'){
+    let artistId: any;
+    console.log('item', item);
+
+    if (item.type === 'artist') {
       artistId = item.id;
-    }else{
+    } else {
       artistId = item.artists[0].id;
     }
     this.router.navigate(['artist', artistId]);
